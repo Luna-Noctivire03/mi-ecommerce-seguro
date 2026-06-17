@@ -1,0 +1,42 @@
+{
+  "info": {
+    "name": "mi-ecommerce-seguro",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET Productos",
+      "request": {
+        "method": "GET",
+        "url": "https://localhost:8443/api/productos"
+      }
+    },
+    {
+      "name": "POST Login",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"usuario\": \"admin\", \"contrasena\": \"1234\"}"
+        },
+        "url": "https://localhost:8443/api/login"
+      }
+    },
+    {
+      "name": "POST Checkout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "Authorization", "value": "Bearer <token>"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"carro\": [1, 2]}"
+        },
+        "url": "https://localhost:8443/api/checkout"
+      }
+    }
+  ]
+}
